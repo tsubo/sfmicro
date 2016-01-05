@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Symfony MicroKernel{% endblock %}</title>
+
+        {# Bootstrap CDN #}
+        <link  rel="stylesheets" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="/css/app.css">
+
+        {% block stylesheets %} {% endblock %}
+        <link rel="icon" type="image/x-icon" href="'favicon.ico'" />
+    </head>
+    <body class="{% block body_class %} {% endblock %}">
+        {# Navigation #}
+        {% include '_navbar.html.twig' %}
+    
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+
+        {# JQuery CDN #}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        {# Bootstrap CDN #}
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
+
